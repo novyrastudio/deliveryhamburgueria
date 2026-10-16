@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#120d0a" />
+    <title>Política de Privacidade | Fornalha 147</title>
+    <link rel="icon" href="assets/logo-fornalha.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles-v2.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("fornalha-theme") || "dark";
+      } catch (error) {}
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Fornalha 147"><img src="assets/logo-fornalha.svg" alt="Fornalha 147" /></a>
+      <span></span>
+      <span></span>
+      <div class="header-actions"><a class="ghost-btn" href="index.html">Voltar à loja</a></div>
+    </header>
+
+    <main class="legal">
+      <p class="eyebrow">Privacidade e LGPD</p>
+      <h1>Política de Privacidade</h1>
+
+      <p class="soon-note" id="minuta"><strong>MINUTA — não publicar sem revisão.</strong> Os trechos <mark>[[em destaque]]</mark> precisam ser preenchidos ou confirmados pelo responsável pela loja e revisados por quem entenda de LGPD. Depois de revisar, apague este aviso.</p>
+      <div class="soon-note" id="pendencias">
+        <strong>Depende de confirmação da loja antes de publicar:</strong>
+        <ul>
+          <li>Razão social, CNPJ, endereço e canal do encarregado (item 1).</li>
+          <li>Prazo de guarda dos pedidos e o que acontece com eles ao excluir a conta (itens 5 e 7).</li>
+          <li>Se o Cloudflare Turnstile está ativo e se as fontes do Google continuam no site (item 4).</li>
+          <li>Região do Supabase, outros prestadores (entregadores, nota fiscal, contabilidade) e o que Hostinger e Supabase registram (itens 2, 4 e 5).</li>
+          <li>Base legal de cada finalidade, revisada por quem entenda de LGPD (item 3).</li>
+        </ul>
+      </div>
+
+      <h2>1. Quem é o responsável</h2>
+      <p>Razão social: <mark>[[RAZÃO SOCIAL]]</mark> • CNPJ: <mark>[[CNPJ]]</mark> • Endereço: <mark>[[ENDEREÇO]]</mark><br>
+      Contato para assuntos de privacidade (encarregado): <mark>[[NOME E E-MAIL DO ENCARREGADO / CANAL DE ATENDIMENTO]]</mark></p>
+
+      <h2>2. Quais dados coletamos</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Quando</th><th>Dados</th><th>Onde ficam</th></tr></thead>
+        <tbody>
+          <tr><td>Criar conta</td><td>Nome, WhatsApp, e-mail, senha (guardada apenas em formato criptografado irreversível) e o registro de que você marcou o consentimento <mark>[[confirmar se a data do consentimento é gravada no banco; se não for, tirar esta menção da política ou passar a gravá-la]]</mark></td><td>Serviço de autenticação e banco de dados (Supabase)</td></tr>
+          <tr><td>Fazer um pedido (com ou sem conta)</td><td>Nome, WhatsApp, e-mail (opcional), bairro, endereço e complemento (entrega), forma de pagamento e valor do troco, itens com ponto da carne, adicionais, remoções e observações, cupom, valores e histórico de status. O pagamento é feito na entrega ou na retirada: <strong>não coletamos número de cartão</strong> pelo site.</td><td>Banco de dados (Supabase)</td></tr>
+          <tr><td>Proteção contra pedidos falsos</td><td>Um identificador irreversível derivado do endereço de rede (IP) e, se a verificação de segurança estiver ativa, o resultado dela. O IP em si não é gravado por esta função.</td><td>Banco de dados (Supabase)</td></tr>
+          <tr><td>Administração da loja</td><td>Para quem recebe acesso ao painel: nome, e-mail e papel (administrador ou cliente). Cada alteração de papel fica registrada em auditoria, com quem fez, quem foi alterado e quando.</td><td>Banco de dados (Supabase)</td></tr>
+          <tr><td>Uso do site</td><td>No seu aparelho: carrinho, cupom, forma de receber (entrega ou retirada) e bairro, rascunho dos dados do checkout (nome, WhatsApp, e-mail, endereço, complemento, forma de pagamento e troco), tema claro/escuro e a sessão de login (tokens de acesso, nunca a senha). No painel, a preferência pelo som de novos pedidos.</td><td>Armazenamento do navegador (não enviado a nós até você finalizar o pedido). O rascunho do checkout é apagado ao sair da conta ou excluí-la; em aparelho compartilhado, use “Sair da conta”.</td></tr>
+          <tr><td>Acesso ao site</td><td>Endereço de IP, navegador e data de acesso, registrados pelos serviços de hospedagem e autenticação</td><td>Hostinger e Supabase <mark>[[confirmar o que cada provedor registra e por quanto tempo]]</mark></td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>3. Para que usamos</h2>
+      <ul>
+        <li>Receber, preparar, entregar e cobrar o seu pedido, e falar com você sobre ele (por exemplo, pelo WhatsApp informado).</li>
+        <li>Manter a sua conta e o histórico dos seus pedidos, incluindo “Pedir novamente”.</li>
+        <li>Prevenir fraudes e pedidos falsos.</li>
+        <li>Controlar quem pode acessar o painel da loja e manter o registro dessas alterações.</li>
+        <li>Cumprir obrigações legais, fiscais e contábeis <mark>[[confirmar quais se aplicam à loja]]</mark>.</li>
+      </ul>
+      <p>Bases legais previstas na LGPD: execução de contrato (pedido), consentimento (criação de conta), legítimo interesse (prevenção a fraude) e obrigação legal. <mark>[[Confirmar a base legal de cada finalidade com assessoria jurídica]]</mark></p>
+
+      <h2>4. Com quem os dados passam</h2>
+      <ul>
+        <li><strong>Supabase</strong>: banco de dados e autenticação. <mark>[[Confirmar a região dos servidores escolhida no projeto e se há transferência internacional]]</mark></li>
+        <li><strong>Hostinger</strong>: hospedagem do site.</li>
+        <li><strong>Cloudflare Turnstile</strong>: verificação de segurança, somente se estiver ativada. <mark>[[Remover se não for usada]]</mark></li>
+        <li><strong>Google Fonts</strong>: as fontes do site são carregadas dos servidores do Google, que recebem o IP do visitante. <mark>[[Decidir: manter e informar, ou hospedar as fontes no próprio site]]</mark></li>
+        <li><strong>WhatsApp</strong>: ao tocar nos botões de WhatsApp, a conversa acontece no aplicativo, sob as regras dele.</li>
+      </ul>
+      <p>Não vendemos seus dados. <mark>[[Confirmar se há outros prestadores, como entregadores, sistema de nota fiscal ou contabilidade]]</mark></p>
+
+      <h2>5. Por quanto tempo guardamos</h2>
+      <ul>
+        <li><strong>Dados da conta:</strong> enquanto a conta existir. Você pode excluí-la a qualquer momento (item 7).</li>
+        <li><strong>Pedidos:</strong> <mark>[[PRAZO DEFINIDO PELO RESPONSÁVEL, conforme obrigações legais aplicáveis]]</mark></li>
+        <li><strong>Registro de proteção contra pedidos falsos:</strong> até 2 dias; a limpeza é automática e acontece quando o sistema recebe novos pedidos.</li>
+        <li><strong>Registros de hospedagem e autenticação:</strong> <mark>[[conforme os provedores]]</mark></li>
+      </ul>
+
+      <h2>6. Seus direitos</h2>
+      <p>Pela LGPD você pode pedir confirmação de que tratamos seus dados, acesso, correção, anonimização ou eliminação, portabilidade, informação sobre compartilhamento e revogar o consentimento. Com conta, você faz isso em <strong>Minha conta</strong> no site:</p>
+      <ul>
+        <li>corrigir nome e WhatsApp;</li>
+        <li>baixar uma cópia dos seus dados (arquivo JSON com nome, WhatsApp, e-mail e seus pedidos);</li>
+        <li>excluir a conta.</li>
+      </ul>
+      <p>Quem pediu <strong>sem conta</strong>, ou quiser exercer outro direito, deve falar com o canal do item 1.</p>
+
+      <h2>7. Exclusão de conta</h2>
+      <p>Ao excluir a conta, apagamos seu cadastro e seus dados de acesso. Os pedidos já feitos deixam de estar ligados à conta, mas <mark>[[ESCOLHA UMA: ficam guardados como estão pelo prazo do item 5 / ficam guardados sem nome, telefone, e-mail e endereço]]</mark>, porque a loja pode precisar mantê-los por obrigação legal. A exclusão não pode ser desfeita.</p>
+
+      <h2>8. Segurança</h2>
+      <p>Usamos conexão segura (HTTPS), senhas protegidas por criptografia, regras de acesso no banco de dados que separam clientes e administradores e limites contra uso abusivo. Nenhum sistema é totalmente imune a falhas; em caso de incidente relevante, avisaremos conforme a lei.</p>
+
+      <h2>9. Mudanças nesta política</h2>
+      <p>Podemos atualizar este texto. Última atualização: <mark>[[DATA]]</mark>.</p>
+    </main>
+  </body>
+</html>

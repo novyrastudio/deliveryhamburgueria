@@ -1,0 +1,16 @@
+<svg width="420" height="136" viewBox="0 0 420 136" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Fornalha 147</title>
+  <desc id="desc">Logo original com monograma de brasa e wordmark Fornalha 147.</desc>
+  <rect width="420" height="136" rx="0" fill="none"/>
+  <g transform="translate(14 12)">
+    <path d="M58 4C37 25 24 42 24 62c0 28 23 50 52 50s52-22 52-50c0-19-10-34-27-50 4 18-4 28-17 35 3-18-8-31-26-43Z" fill="#F26B21"/>
+    <path d="M76 31c-15 15-25 27-25 43 0 16 12 28 27 28 17 0 30-12 30-28 0-13-7-24-19-34 2 11-3 19-11 24 1-13-5-23-18-33Z" fill="#F5B044"/>
+    <path d="M76 56c-8 9-13 17-13 26 0 10 7 17 16 17 10 0 18-7 18-17 0-8-4-15-12-22 1 7-2 12-7 15 1-8-3-14-10-19Z" fill="#27120D"/>
+    <path d="M17 114h118" stroke="#F26B21" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(160 31)">
+    <text x="0" y="40" fill="#FFF1DE" font-size="36" font-weight="800" font-family="Segoe UI, Arial, sans-serif" letter-spacing="1">FORNALHA</text>
+    <text x="0" y="82" fill="#F26B21" font-size="43" font-weight="900" font-family="Segoe UI, Arial, sans-serif" letter-spacing="2">147</text>
+    <text x="94" y="78" fill="#CBB89E" font-size="13" font-weight="700" font-family="Segoe UI, Arial, sans-serif" letter-spacing="4">BRASA ARTESANAL</text>
+  </g>
+</svg>

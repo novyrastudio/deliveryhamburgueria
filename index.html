@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#120d0a" />
+    <title>Fornalha 147 | Delivery artesanal</title>
+    <link rel="icon" href="assets/logo-fornalha.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles-v2.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("fornalha-theme") || "dark";
+      } catch (error) {}
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Fornalha 147">
+        <img src="assets/logo-fornalha.svg" alt="Fornalha 147" />
+      </a>
+
+      <div class="header-pulse" id="storeStatus">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>Carregando horário</span>
+      </div>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#promocoes">Promoções</a>
+        <a href="#duvidas">Dúvidas</a>
+        <button class="nav-account" type="button" data-open-auth>Minha conta</button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-btn" type="button" id="themeToggle" aria-label="Alternar entre tema claro e escuro">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor"/></svg>
+        </button>
+        <button class="ghost-btn" type="button" id="authButton">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4.8 20c.6-3.7 3.6-5.6 7.2-5.6s6.6 1.9 7.2 5.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span id="authButtonText">Entrar</span>
+        </button>
+        <button class="cart-trigger" type="button" id="openCart" aria-label="Abrir carrinho">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 4.5h2.4l2 10.2h9.6l1.8-7.4H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.6" cy="19" r="1.5" fill="currentColor"/><circle cx="16.8" cy="19" r="1.5" fill="currentColor"/></svg>
+          <span class="cart-trigger-label">Carrinho</span>
+          <strong id="cartCount">0</strong>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mainNav">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <!-- Hero e banners: a fonte dos dados é banners.js. O conteúdo escrito aqui é só o padrão exibido se o script não carregar. -->
+      <section class="hero-section" id="heroBanner" aria-label="Destaque da casa">
+        <div class="hero-bg" aria-hidden="true">
+          <img class="hero-burger" src="assets/burger-costela.jpg" alt="" />
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow" data-slot="eyebrow">Terça a domingo • 18h às 23h30</p>
+          <h1 data-slot="title">Brasa alta, pedido rápido e hambúrguer artesanal de verdade.</h1>
+          <p class="hero-text" data-slot="text">Fornalha 147 entrega burgers premium no Centro, Jardins e Vila Nova, com retirada grátis e pagamento na entrega ou retirada.</p>
+          <div class="hero-actions" data-slot="actions">
+            <a class="primary-btn" href="#cardapio">Pedir agora</a>
+            <button class="secondary-btn" type="button" data-copy-coupon="BRASA15">Cupom BRASA15 <small>15% OFF</small></button>
+          </div>
+          <div class="hero-metrics" aria-label="Informações rápidas">
+            <span><strong>35-50 min</strong> entrega média</span>
+            <span><strong>R$ 5,90+</strong> taxa por bairro</span>
+            <span><strong>Retirada</strong> grátis</span>
+          </div>
+        </div>
+
+        <div class="hero-ticket" data-slot="ticket" aria-label="Cupom de boas-vindas">
+          <span data-ticket-label>Hoje</span>
+          <strong data-ticket-code>BRASA15</strong>
+          <small data-ticket-note>15% de desconto</small>
+        </div>
+      </section>
+
+      <section class="highlights" aria-labelledby="destaques-title">
+        <div>
+          <p class="eyebrow">Destaques da noite</p>
+          <h2 id="destaques-title">Favoritos para abrir o apetite.</h2>
+        </div>
+        <div class="highlight-grid">
+          <article>
+            <span class="mini-icon" aria-hidden="true">✦</span>
+            <h3>Fotos realistas</h3>
+            <p>Imagens locais de referência, com enquadramento consistente e sem depender de links externos.</p>
+          </article>
+          <article>
+            <span class="mini-icon" aria-hidden="true">%</span>
+            <h3>BRASA15</h3>
+            <p>Use o cupom no carrinho e veja subtotal, desconto, taxa e total recalculados.</p>
+          </article>
+          <article>
+            <span class="mini-icon" aria-hidden="true">⌁</span>
+            <h3>Entrega ou retirada</h3>
+            <p>Centro, Jardins e Vila Nova com taxas simuladas; retirada permanece grátis.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-section" id="cardapio" aria-labelledby="cardapio-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Cardápio</p>
+            <h2 id="cardapio-title">Escolha por categoria e personalize antes de adicionar.</h2>
+          </div>
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.2 15.2 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <label class="sr-only" for="menuSearch">Buscar no cardápio</label>
+            <input id="menuSearch" type="search" placeholder="Buscar no cardápio..." autocomplete="off" />
+            <button class="search-clear" type="button" id="searchClear" aria-label="Limpar busca" hidden>×</button>
+          </div>
+        </div>
+
+        <div class="menu-tabs" id="menuTabs" role="group" aria-label="Categorias do cardápio"></div>
+        <p class="search-status" id="searchStatus" role="status" aria-live="polite" hidden></p>
+
+        <div id="menuSections" class="menu-sections"></div>
+
+        <div class="empty-search" id="emptySearch" hidden>
+          <p>Nenhum produto encontrado. Tente buscar por burger, batata, bebida ou sobremesa.</p>
+          <button class="secondary-btn" type="button" data-clear-search>Limpar busca</button>
+        </div>
+      </section>
+
+      <!-- Promoções: preenchidas por banners.js (um bloco por promoção ativa). -->
+      <div class="promo-stack" id="promocoes">
+        <section class="promo-section">
+          <div class="promo-copy">
+            <p class="eyebrow">Promoções</p>
+            <h2>Cupom de estreia para testar o fluxo completo.</h2>
+            <p>Digite <strong>BRASA15</strong> no carrinho. O protótipo recalcula o desconto de 15%, a taxa do bairro e o total final antes da revisão do pedido.</p>
+          </div>
+          <button class="secondary-btn" type="button" data-copy-coupon="BRASA15">Copiar cupom</button>
+        </section>
+      </div>
+
+      <section class="login-preview" aria-labelledby="login-preview-title">
+        <div>
+          <p class="eyebrow">Conta do cliente</p>
+          <h2 id="login-preview-title">Sua conta, seus dados salvos.</h2>
+          <p id="loginPreviewText">
+            Crie uma conta para guardar seus dados e, quando o checkout for conectado ao sistema de pedidos, acompanhar seus pedidos e usar “Pedir novamente”. Você também pode pedir sem conta, informando nome e WhatsApp no checkout.
+          </p>
+        </div>
+        <button class="primary-btn" type="button" id="loginPreviewBtn" data-open-auth>Entrar ou criar conta</button>
+      </section>
+
+      <section class="faq-section" id="duvidas" aria-labelledby="duvidas-title">
+        <p class="eyebrow">Ajuda</p>
+        <h2 id="duvidas-title">Dúvidas frequentes</h2>
+        <div class="faq-list" id="faqList">
+          <article class="faq-item open">
+            <h3>
+              <button class="faq-q" type="button" id="faq-q-1" aria-expanded="true" aria-controls="faq-a-1">
+                <span>Quais bairros são atendidos?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1">
+              <div class="faq-a-inner"><p>Centro, Jardins e Vila Nova. A taxa simulada muda no carrinho conforme o bairro escolhido.</p></div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-q" type="button" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">
+                <span>Posso retirar no local?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2">
+              <div class="faq-a-inner"><p>Sim. Retirada na Rua das Brasas, 147 — Centro, sem taxa de entrega.</p></div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-q" type="button" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">
+                <span>Qual é o horário de funcionamento?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3">
+              <div class="faq-a-inner"><p>De terça a domingo, das 18h às 23h30. Às segundas a cozinha não abre.</p></div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-q" type="button" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">
+                <span>Quais formas de pagamento aparecem no protótipo?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4">
+              <div class="faq-a-inner"><p>Dinheiro, Pix, débito e crédito, sempre na entrega ou retirada.</p></div>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-q" type="button" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5">
+                <span>O pedido é real?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5">
+              <div class="faq-a-inner"><p>Ainda não. Os pedidos são simulados e não chegam à cozinha. O cadastro de clientes usa um serviço de autenticação real quando ele está configurado.</p></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-panel" id="cartPanel" aria-label="Carrinho" aria-hidden="true">
+      <div class="cart-head">
+        <div>
+          <p class="eyebrow">Seu pedido</p>
+          <h2>Carrinho</h2>
+        </div>
+        <button class="icon-btn" type="button" id="closeCart" aria-label="Fechar carrinho">×</button>
+      </div>
+
+      <div class="cart-body">
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-controls">
+          <label>
+            Tipo de pedido
+            <select id="orderMode">
+              <option value="delivery">Entrega</option>
+              <option value="pickup">Retirada grátis</option>
+            </select>
+          </label>
+          <label id="districtLabel">
+            Bairro
+            <select id="district"></select>
+          </label>
+          <form class="coupon-row" id="couponForm">
+            <label for="couponInput">Cupom</label>
+            <div>
+              <input id="couponInput" type="text" placeholder="BRASA15" autocomplete="off" />
+              <button type="submit">Aplicar</button>
+            </div>
+            <small id="couponMessage" aria-live="polite"></small>
+          </form>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="totals" id="totals"></div>
+        <button class="primary-btn full" type="button" id="startCheckout">Finalizar pedido</button>
+        <button class="secondary-btn full" type="button" id="keepShopping">Voltar ao cardápio</button>
+      </div>
+    </aside>
+    <button class="cart-scrim" type="button" id="cartScrim" aria-label="Fechar carrinho" tabindex="-1"></button>
+
+    <footer class="site-footer">
+      <div>
+        <img src="assets/logo-fornalha.svg" alt="Fornalha 147" />
+        <p>Rua das Brasas, 147 — Centro • WhatsApp (11) 99999-2026</p>
+      </div>
+      <p>Protótipo do cliente • pedidos ainda simulados, sem comunicação com a cozinha.</p>
+    </footer>
+
+    <a
+      class="float-action whatsapp"
+      href="https://wa.me/5511999992026?text=Ol%C3%A1%2C%20quero%20fazer%20um%20pedido%20na%20Fornalha%20147."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="Falar com a Fornalha 147 no WhatsApp"
+    >
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M16.02 3.2A12.62 12.62 0 0 0 5.2 22.27L3.8 28.4l6.27-1.34A12.62 12.62 0 1 0 16.02 3.2Zm0 2.28a10.33 10.33 0 0 1 8.83 15.7 10.32 10.32 0 0 1-13.96 3.7l-.42-.25-3.73.8.83-3.62-.27-.44A10.34 10.34 0 0 1 16.02 5.48Zm-4.5 5.08c-.23 0-.6.09-.92.44-.31.35-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.38 3.8 5.86 5.17 2.9 1.14 3.5.91 4.13.86.63-.06 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.09-.14-.32-.23-.68-.4-.35-.17-2.03-1-2.35-1.11-.31-.12-.54-.18-.77.17-.23.34-.89 1.1-1.09 1.32-.2.23-.4.26-.74.09-.35-.17-1.46-.54-2.78-1.72-1.03-.92-1.72-2.05-1.92-2.4-.2-.34-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.12-.23.06-.43-.03-.6-.09-.17-.78-1.89-1.07-2.58-.28-.67-.57-.58-.78-.59h-.58Z"/>
+      </svg>
+    </a>
+
+    <button class="mobile-cart-bar" type="button" id="mobileCartBar" hidden>
+      <span>Ver carrinho</span>
+      <strong id="mobileCartTotal">R$ 0,00</strong>
+    </button>
+
+    <section class="modal-backdrop" id="productModal" hidden>
+      <article class="product-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="icon-btn modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+        <div class="modal-media">
+          <img id="modalImage" alt="" />
+        </div>
+        <div class="modal-panel">
+          <div class="modal-scroll" id="modalScroll">
+            <header class="modal-head">
+              <p class="eyebrow" id="modalCategory"></p>
+              <h2 id="modalTitle"></h2>
+              <p id="modalDescription"></p>
+            </header>
+
+            <fieldset class="option-group" id="donenessBlock" hidden>
+              <legend>
+                <span class="og-title">Ponto da carne</span>
+                <span class="og-badge required">Obrigatório</span>
+              </legend>
+              <p class="og-help" id="donenessHelp">Escolha 1 opção.</p>
+              <div class="doneness-list" id="donenessList"></div>
+              <p class="field-error" id="donenessError" role="alert" hidden>Escolha o ponto da carne para continuar.</p>
+            </fieldset>
+
+            <fieldset class="option-group" id="removeBlock" hidden>
+              <legend>
+                <span class="og-title">Retirar ingredientes</span>
+                <span class="og-badge free">Sem custo</span>
+              </legend>
+              <p class="og-help">Toque no que você não quer. Os itens riscados não vão no seu pedido.</p>
+              <div class="chip-grid" id="removeList"></div>
+            </fieldset>
+
+            <fieldset class="option-group" id="addonBlock" hidden>
+              <legend>
+                <span class="og-title">Adicionais</span>
+                <span class="og-badge paid">Com custo</span>
+              </legend>
+              <p class="og-help">Marque quantos quiser. O valor é somado ao preço.</p>
+              <div class="addon-list" id="addonList"></div>
+            </fieldset>
+
+            <div class="option-group">
+              <label class="og-title notes-label" for="itemNotes">Observação <span class="og-badge optional">Opcional</span></label>
+              <textarea id="itemNotes" rows="2" maxlength="200" placeholder="Ex.: molho à parte, cortar ao meio..."></textarea>
+              <span class="note-count" id="noteCount" aria-hidden="true">0/200</span>
+            </div>
+
+            <section class="selection-summary" aria-labelledby="summaryTitle">
+              <h3 id="summaryTitle">Resumo da sua escolha</h3>
+              <ul id="selectionSummary" aria-live="polite"></ul>
+            </section>
+          </div>
+
+          <div class="modal-buy-row">
+            <div class="quantity-stepper">
+              <button type="button" data-qty="-1" aria-label="Diminuir quantidade">−</button>
+              <strong id="modalQty" aria-live="polite">1</strong>
+              <button type="button" data-qty="1" aria-label="Aumentar quantidade">+</button>
+            </div>
+            <button class="primary-btn" type="button" id="addToCart">
+              <span id="addToCartLabel">Adicionar</span>
+              <strong id="modalPrice">R$ 0,00</strong>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="modal-backdrop" id="authModal" hidden>
+      <article class="auth-modal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <button class="icon-btn modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+        <p class="eyebrow">Conta do cliente</p>
+        <h2 id="authTitle">Sua conta</h2>
+        <p class="auth-helper" id="authHelper"></p>
+        <div class="auth-tabs" id="authTabs" role="group" aria-label="Acesso"></div>
+        <form id="authForm" class="auth-form" novalidate></form>
+      </article>
+    </section>
+
+    <section class="modal-backdrop" id="checkoutModal" hidden>
+      <article class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+        <button class="icon-btn modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+        <div class="checkout-head">
+          <p class="eyebrow">Checkout simulado</p>
+          <h2 id="checkoutTitle">Finalize seu pedido</h2>
+          <div class="stepper" id="checkoutSteps"></div>
+        </div>
+        <form id="checkoutForm" class="checkout-body" novalidate></form>
+        <div class="checkout-actions">
+          <button class="secondary-btn" type="button" id="checkoutBack">Voltar</button>
+          <button class="primary-btn" type="button" id="checkoutNext">Continuar</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="modal-backdrop" id="orderModal" hidden>
+      <article class="order-modal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
+        <button class="icon-btn modal-close" type="button" data-close-modal aria-label="Fechar">×</button>
+        <p class="eyebrow">Pedido demonstrativo</p>
+        <h2 id="orderTitle">Pedido simulado</h2>
+        <div id="orderSummary" class="order-summary"></div>
+      </article>
+    </section>
+
+    <section class="toast" id="toast" role="status" aria-live="polite"></section>
+
+    <script src="config.js"></script>
+    <script src="auth-client.js"></script>
+    <script src="banners.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

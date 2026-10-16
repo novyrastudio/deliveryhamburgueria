@@ -1,0 +1,52 @@
+/* Página de redefinição de senha (usa as variáveis de styles.css / styles-v2.css) */
+
+.reset-page {
+  display: grid;
+  place-items: start center;
+  min-height: 100dvh;
+  padding: calc(var(--header-h) + 2rem) var(--gutter) 3rem;
+}
+
+.reset-card {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  max-width: 28rem;
+  min-width: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--ghost-bg);
+}
+
+.reset-card h1 {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 2.8rem);
+}
+
+.reset-state {
+  display: grid;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.reset-state[hidden] {
+  display: none;
+}
+
+.reset-text {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.reset-card .primary-btn,
+.reset-card .secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}

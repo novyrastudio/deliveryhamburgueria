@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#120d0a" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Redefinir senha | Fornalha 147</title>
+    <link rel="icon" href="../assets/logo-fornalha.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../styles-v2.css" />
+    <link rel="stylesheet" href="redefinir-senha.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("fornalha-theme") || "dark";
+      } catch (error) {}
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Fornalha 147"><img src="../assets/logo-fornalha.svg" alt="Fornalha 147" /></a>
+      <span></span>
+      <span></span>
+      <div class="header-actions"><a class="ghost-btn" href="../index.html">Voltar à loja</a></div>
+    </header>
+
+    <main class="reset-page">
+      <section class="reset-card" aria-live="polite">
+        <p class="eyebrow">Sua conta</p>
+        <h1 id="resetTitle">Nova senha</h1>
+
+        <!-- Verificando o link -->
+        <div id="stateLoading" class="reset-state">
+          <p class="reset-text">Verificando o link de recuperação…</p>
+        </div>
+
+        <!-- Formulário -->
+        <form id="resetForm" class="auth-form reset-state" novalidate hidden>
+          <p class="reset-text">Defina uma nova senha para a sua conta.</p>
+          <div class="auth-field">
+            <label for="rp-password">Nova senha</label>
+            <div class="af-control">
+              <input id="rp-password" name="password" type="password" autocomplete="new-password" autocapitalize="none" spellcheck="false" aria-describedby="err-password" />
+              <button class="pw-toggle" type="button" data-toggle-password aria-label="Mostrar senha" aria-pressed="false">Mostrar</button>
+            </div>
+            <small class="field-error" id="err-password" hidden></small>
+          </div>
+          <p class="field-hint">Mínimo de 8 caracteres, com letras e números.</p>
+          <div class="auth-field">
+            <label for="rp-confirm">Confirmar nova senha</label>
+            <div class="af-control">
+              <input id="rp-confirm" name="confirm" type="password" autocomplete="new-password" autocapitalize="none" spellcheck="false" aria-describedby="err-confirm" />
+              <button class="pw-toggle" type="button" data-toggle-password aria-label="Mostrar senha" aria-pressed="false">Mostrar</button>
+            </div>
+            <small class="field-error" id="err-confirm" hidden></small>
+          </div>
+          <p class="form-alert" id="resetAlert" role="alert" hidden></p>
+          <button class="primary-btn full" id="resetSubmit" type="submit">Salvar nova senha</button>
+        </form>
+
+        <!-- Sucesso -->
+        <div id="stateSuccess" class="reset-state" hidden>
+          <p class="form-success" role="status">Senha alterada com sucesso. Use a nova senha para entrar.</p>
+          <a class="primary-btn full" id="goLogin" href="../index.html?entrar=1">Ir para entrar</a>
+        </div>
+
+        <!-- Link inválido, expirado ou já usado -->
+        <div id="stateInvalid" class="reset-state" hidden>
+          <p class="form-alert" id="invalidText" role="alert">Este link de recuperação é inválido, expirou ou já foi usado.</p>
+          <p class="reset-text">Por segurança, cada link vale por pouco tempo e só pode ser usado uma vez. Peça um novo e-mail de recuperação.</p>
+          <a class="primary-btn full" href="../index.html?entrar=recuperar">Pedir novo link</a>
+          <a class="secondary-btn full" href="../index.html?entrar=1">Voltar para entrar</a>
+        </div>
+
+        <!-- Sem autenticação configurada -->
+        <div id="stateUnconfigured" class="reset-state" hidden>
+          <p class="soon-note"><strong>Contas ainda não ativadas neste ambiente.</strong> O serviço de autenticação não foi configurado.</p>
+          <a class="secondary-btn full" href="../index.html">Voltar à loja</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="../config.js"></script>
+    <script src="../auth-client.js"></script>
+    <script src="redefinir-senha.js"></script>
+  </body>
+</html>

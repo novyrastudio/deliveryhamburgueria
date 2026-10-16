@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d0b0a" />
+    <title>Brasa Burger | Painel administrativo</title>
+    <link rel="icon" href="assets/logo-fornalha.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <div class="admin-shell" id="adminShell">
+      <aside class="sidebar" id="sidebar" aria-label="Menu administrativo">
+        <div class="brand-block">
+          <img src="assets/logo-fornalha.svg" alt="Brasa Burger" />
+          <div>
+            <strong>BRASA</strong>
+            <span>PAINEL DE GESTÃO</span>
+          </div>
+        </div>
+
+        <nav class="side-nav" id="sideNav" aria-label="Seções do painel"></nav>
+
+        <div class="store-card">
+          <div class="store-line">
+            <span class="status-dot"></span>
+            <strong>Loja aberta</strong>
+          </div>
+          <p>Recebendo pedidos</p>
+          <a href="index.html">Ver loja <span aria-hidden="true">←</span></a>
+        </div>
+      </aside>
+
+      <div class="mobile-scrim" id="mobileScrim" hidden></div>
+
+      <div class="workspace">
+        <header class="topbar">
+          <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          </button>
+
+          <div class="title-area">
+            <p id="headerDate">SEXTA-FEIRA, 18 DE JULHO</p>
+            <h1 id="pageTitle">Visão geral</h1>
+          </div>
+
+          <label class="global-search" for="globalSearch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.2" /><path d="m15.2 15.2 5 5" /></svg>
+            <input id="globalSearch" type="search" placeholder="Buscar pedido, cliente..." autocomplete="off" />
+          </label>
+
+          <div class="top-actions">
+            <button class="icon-btn" id="soundToggle" type="button" aria-label="Som de novos pedidos ligado" aria-pressed="true">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4H4Z" /><path d="M17 9.5a4 4 0 0 1 0 5M19.5 7a7.5 7.5 0 0 1 0 10" /></svg>
+            </button>
+            <button class="icon-btn has-badge" id="notifyBtn" type="button" aria-label="Notificações">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 1 0-12 0c0 7-2 7-2 9h16c0-2-2-2-2-9Z" /><path d="M10 21h4" /></svg>
+              <span hidden>0</span>
+            </button>
+            <button class="profile-btn" id="profileBtn" type="button" aria-label="Abrir menu do perfil">
+              <span class="avatar">MS</span>
+              <span class="profile-copy">
+                <strong>Marina Silva</strong>
+                <small>Administrador</small>
+              </span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" /></svg>
+            </button>
+          </div>
+        </header>
+
+        <main class="content" id="viewRoot" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="order-drawer" id="orderDrawer" aria-hidden="true" aria-label="Detalhes do pedido"></aside>
+
+    <section class="modal-backdrop" id="modalBackdrop" hidden>
+      <article class="modal-panel" id="modalPanel" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></article>
+    </section>
+
+    <section class="confirm-backdrop" id="confirmBackdrop" hidden>
+      <article class="confirm-panel" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <button class="icon-btn modal-x" type="button" data-confirm-cancel aria-label="Fechar">×</button>
+        <p class="eyebrow">CONFIRMAÇÃO</p>
+        <h2 id="confirmTitle">Confirmar ação</h2>
+        <p id="confirmText">Tem certeza?</p>
+        <div class="modal-actions">
+          <button class="ghost-action" type="button" data-confirm-cancel>Cancelar</button>
+          <button class="danger-btn" type="button" data-confirm-ok>Confirmar</button>
+        </div>
+      </article>
+    </section>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="../config.js"></script>
+<script src="../auth-client.js"></script>
+<script src="admin.js"></script>
+  </body>
+</html>
