@@ -117,8 +117,15 @@
         },
         body: body === undefined ? undefined : JSON.stringify(body),
       });
-    } catch {
-      throw new AuthError("network", "Não foi possível conectar ao serviço. Verifique sua internet e tente novamente.");
+    } catch (cause) {
+      // Um fetch rejeitado não prova que a internet da pessoa caiu. DNS,
+      // URL de projeto incorreta/pausada e bloqueios de rede também chegam aqui.
+      const failure = new AuthError(
+        "network",
+        "Não foi possível alcançar o Supabase configurado. Confira o endereço do projeto e se ele está ativo; sua internet pode estar funcionando normalmente."
+      );
+      failure.cause = cause;
+      throw failure;
     }
 
     const text = await response.text();

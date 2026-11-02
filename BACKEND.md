@@ -1,6 +1,6 @@
 # Fornalha 147 — backend e integração
 
-Atualizado em 31/10/2026. Este documento descreve o código local desta cópia; não confirma o estado remoto do Supabase.
+Atualizado em 01/11/2026. Este documento descreve o código local desta cópia; não confirma o estado remoto do Supabase.
 
 ## Arquitetura existente
 
@@ -32,6 +32,12 @@ O projeto Supabase foi reconfigurado segundo a informação do responsável. A U
 Os schemas locais são documentação de referência. A sequência de dependências é `schema.sql` e depois os patches 01 a 06. **Não execute essa sequência nem qualquer SQL neste momento.** Os arquivos incluem carga e atualização de dados comerciais e não provam quais alterações já existem no banco.
 
 O contrato local do checkout confere com a versão final das RPCs e com os campos descritos nos schemas. Essa comparação é estática; tabelas, colunas, RPCs, RLS e permissões do projeto remoto seguem sem confirmação. Nenhum SQL foi executado e o banco não foi alterado.
+
+## Diagnóstico de login — 01/11/2026
+
+A primeira verificação encontrou no `config.js` um endereço Supabase antigo cujo hostname falhou no navegador com `net::ERR_NAME_NOT_RESOLVED`. Isso acontece antes de uma resposta HTTP e não prova que a conexão geral à internet esteja fora do ar. As causas comuns documentadas pelo Supabase incluem referência de projeto incorreta ou projeto pausado.
+
+O responsável forneceu o endereço e a chave publicável do projeto reconfigurado, e atualizei esse par em `config.js`. O navegador agora alcança o endpoint de Auth do novo endereço; sem enviar a chave pela URL, o endpoint respondeu que a requisição não tinha `apikey`. Isso confirma resolução/conectividade HTTP, mas não confirma a chave, credenciais de usuário, estado das tabelas/RPCs ou sucesso de login. O teste autenticado real continua pendente. A mensagem do cliente foi corrigida para não atribuir uma falha de `fetch` à internet geral. Nunca coloque uma chave `sb_secret_` ou `service_role` no frontend.
 
 ## Limitações e pendências
 

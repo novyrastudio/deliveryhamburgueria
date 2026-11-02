@@ -6,8 +6,8 @@
 window.FORNALHA_CONFIG = Object.freeze({
   auth: Object.freeze({
     provider: "supabase",
-    url: "https://dyitmjanccgfumjllytj.supabase.co",
-    anonKey: "sb_publishable_KJTfkLox4Q-GjWmlmv1o6A_w2AWdlHE",
+    url: "https://pknbmebaffobziijomim.supabase.co",
+    anonKey: "sb_publishable_KXI3aHEe_0xEJZHFnf3ZrA_zOSKNtPJ",
     captchaSiteKey: "",
   }),
 
