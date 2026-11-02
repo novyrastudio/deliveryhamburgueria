@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Foto do produto em revisão</title>
+  <desc id="desc">Marcador temporário usado enquanto uma fotografia real e específica do produto não está disponível.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#24150f"/>
+      <stop offset="1" stop-color="#0e0b09"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#f26b21" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#f26b21" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <ellipse cx="600" cy="450" rx="430" ry="300" fill="url(#glow)"/>
+  <g fill="none" stroke="#f2a06c" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" opacity=".8">
+    <rect x="514" y="284" width="172" height="132" rx="18"/>
+    <circle cx="558" cy="329" r="14"/>
+    <path d="m529 396 43-43 31 28 24-21 44 36"/>
+  </g>
+  <text x="600" y="487" fill="#fff3e8" font-family="Arial, sans-serif" font-size="31" font-weight="700" text-anchor="middle">FOTO REAL EM REVISÃO</text>
+  <text x="600" y="536" fill="#c9a28d" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" letter-spacing="3">FORNALHA 147</text>
+</svg>
